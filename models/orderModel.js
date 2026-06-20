@@ -62,7 +62,7 @@ const orderSchema = new mongoose.Schema(
         // setelStatus :String,
         orderStatus: {
             type: String,
-            enum: ["Pending","Accepted", "Preparing","Ready","On The Way", "Completed","Cancelled"],
+            enum: ["Pending","Accepted", "Consulting","Preparing","Ready","On The Way", "Completed","Cancelled"],
             default: "Pending",
         },
 
@@ -73,7 +73,10 @@ const orderSchema = new mongoose.Schema(
         paymentStatus: {
             type: String,
             default: "UnPaid",
-        },
+        },  additionalDetails: {
+      type: mongoose.Schema.Types.Mixed,
+      default: {},
+    },
     },
     { timestamps: true }
 );

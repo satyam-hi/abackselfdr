@@ -18,7 +18,8 @@ export const createOrder = async (req, res) => {
       orderStatus,
       sprovname,
               ordrType,
-        tableNumber
+        tableNumber,
+        additionalDetails
     } = req.body;
 
     // =====================================================
@@ -84,6 +85,7 @@ export const createOrder = async (req, res) => {
 
       orderStatus:
         orderStatus || "Pending",
+      additionalDetails
     });
 
     // =====================================================
